@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flatiron-Crash</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Supermercado+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Turret+Road&display=swap" rel="stylesheet">
+        <audio id="audio" src="./ka-ching.mp3" autoplay="false" ></audio>
+    </head>
+    <bbody>
+        <div class="top-bar">
+            <span class="top-title"><strong>Flatiron Crash</strong></span>
+            <span class="user-info" id="top-bar-name" hidden="true">User: </span>
+            <span class="user-info" id="top-bar-balance" hidden="true">Balance: </span>
+        </div>
+        <div class="login">
+            <label>Username</label><input id="username" class="login-input" type='text'><br>
+            <!-- <label>Password</label><input id="password" class="login-input" type='text'><br> -->
+            <button id="login-button">Log In</button>
+        </div>
+        <!-- Top left section -->
+        <div class="page-section" id="top-left" hidden="true">
+            <div class="top-right-counter" id="counter">0.00</div>
+            <div class="top-right-left-value" id="final-value" hidden="true">Value: 0.00x</div>
+            <canvas id="grid"></canvas>               
+        </div>
+        <!-- Top right section -->
+        <div class="page-section" id="top-right" hidden="true">
+            <label class="bet-form">Bet Amount: </label><br><input type="number" step="0.01" id="bet-amount" class="bet-form-amount-input">
+                                                        <button class="set-bet-button" id="place-bet-button" disabled="true">Place Bet</button>
+                                                        <button class="set-bet-button" id="pull-out-button" hidden="true">Cash Out</button><hr>
+
+            <label class="bet-form">Multiplier: </label><br><button class="bet-button" data-action="half">1/2</button>
+                                                        <button class="bet-button" data-action="double">2x</button>
+                                                        <button class="bet-button" data-action="max">Max</button><hr>
+            <button class="bet-button" id="start-button" data-action="start-round" disabled="true">Start</button>
+        </div>
+        <!-- Marquee section -->
+        <!-- Bottom left section -->
+        <div class="page-section" id="bottom-left" hidden="true">
+            <div id="chat-window">
+            </div>
+            <div id="chat-line">
+                <button id="chat-button">Send message</button>
+            </div>
+        </div>
+        <!-- Bottom right section -->
+        <div class="page-section" id="bottom-right" hidden="true">
+            <div id="chat-window">
+                    <center><h3>Leaderboards by total profit</h3></center>
+                <div id="top-list-column-2" class="column">
+                    <div id="top-list-column-2-header" class="column-header">Name</div>
+                </div>
+                <div id="top-list-column-3" class="column">
+                    <div id="top-list-column-3-header" class="column-header">Total Profit</div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src='src/Adapter.js'></script>
+        <script src='src/grid.js'></script>
+        <script src='src/Bet.js'></script>
+        <script src='src/engine.js'></script>
+        <script src="src/EventListener.js"></script>
+        <script src='src/User.js'></script>
+        <script src='src/index.js'></script>
+    </bbody>
+</html>

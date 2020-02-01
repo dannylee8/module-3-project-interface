@@ -1,0 +1,308 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    /* font-family: 'Supermercado One', cursive; */
+    /* font-family: 'Yeon Sung', cursive; */
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+    background-color: rgb(40, 42, 111);
+
+}
+
+.top-bar {
+    height: 5%;
+    width: 100%;
+    background-color: rgb(34, 17, 74);
+    font-size: 30px;
+    line-height: 43px;
+}
+
+.top-title {
+    color: white;
+    padding-left: 10px;
+}
+
+.login {
+    height: 95%;
+    width: 100%;
+    background-color: rgb(34, 17, 74);
+    /* background-color: rgb(52, 36, 89); */
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
+.login label {
+    position: relative;
+    top: 40%;
+    height: 50px;
+    font-size: 30px;
+    padding-right: 30px;
+    color: white;
+}
+
+#login-button {
+    position: relative;
+    top: 50%;
+    height: 50px;
+    width: 120px;
+    color: black;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    /* margin: 0 auto; */
+}
+
+.login-input {
+    height: 50px;
+    width: 20%;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: white;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: 40%;
+    /* margin: 0 auto; */
+}
+
+.page-section {
+    height: 48%;
+    width: 50%;
+    float: left;
+}
+
+#top-left {
+    background-color: rgb(23, 25, 82);
+    overflow: hidden;
+}
+
+#top-right {
+    /* line-height: 120px; */
+    font-size: 35px;
+    background-color: rgb(40, 42, 111);
+    text-align: center;
+    /* margin-top: 20px; */
+    /* padding-left: 10px; */
+    /* overflow: hidden; */
+}
+
+#bottom-left {
+    background-color: rgb(40, 42, 111);
+}
+
+#bottom-right {
+    background-color: rgb(40, 42, 111);
+}
+
+#bet-amount {
+    height: 50px;
+    width: 180px;
+    font-size: 40px;
+}
+
+.bet-button {
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 50px;
+    font-size: 40px;
+    background-color: white;
+    border-style: none;
+    border-radius: 10px;
+    width: 120px;
+}
+
+.set-bet-button {
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 50px;
+    font-size: 40px;
+    background-color: white;
+    border-style: none;
+    border-radius: 10px;
+    width: 240px;
+}
+
+.bet-form {
+    /* float: left; */
+    margin-left: 20px;
+}
+
+canvas {
+    /* background-color: #2a3439; */
+    /* border: 1px solid black; */
+    /* transition: 1s; */
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-color: rgb(23, 25, 82);
+    color: white;
+}
+
+.top-right-counter {
+    margin-left: 60px;
+    width: 120px;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(40, 42, 111);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.top-right-left-value {
+    float: right;
+    margin-right: 240px;
+    width: 240px;
+    height: 60px;
+    position: relative;
+    z-index: 1;
+    background-color: rgb(40, 42, 111);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+}
+
+marquee {
+    background-color: rgb(45, 44, 44);
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-family: 'Turret Road', cursive;
+    display: none;
+}
+/* #grid {
+} */
+
+.user-info {
+    padding-left: 10px;
+    padding-right: 10px;
+    float: right;
+    font-size: 20px;
+    height: 20px;
+}
+
+#chat-window {
+    background-color: rgb(40, 42, 111);
+    position: relative;
+    padding-bottom: 0px;
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow: auto;
+    scroll-snap-align: end;
+}
+
+#chat-button {
+    /* position: absolute; */
+    padding: 3px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: white;
+    transition: 1s;
+}
+
+#chat-button:hover {
+    background-color: grey;
+    transition: 1s;
+}
+
+#chat-input {
+    height: 20px;
+    width: 500px;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: white;
+    font-size: 12px;
+    color: white;
+}
+
+#chat-line {
+    position: fixed;
+    bottom: 10px;
+    margin: 5px;
+
+}
+
+.chat_message {
+    font-size: 17px;
+    padding: 3px;
+    list-style: none;
+}
+
+.message-time {
+    color: grey;
+}
+
+
+#old-chats {
+    background-color: rgb(40, 42, 111);
+    position: relative;
+    padding-bottom: 0px;
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow: auto;
+    scroll-snap-align: end;
+    list-style: none;
+}
+
+/* top list */
+
+#top-list {
+    overflow-y: scroll;
+    overflow: auto;
+    scroll-snap-align: end;
+    list-style: none;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding-left: 10px;
+    text-align: centergit p;
+    list-style: none;
+  }
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column-header {
+    font-size: 12px;
+    color: white;
+    padding-top:20px;
+    text-align: center;
+}
+
+.top-score-line {
+    list-style: decimal;
+}
+
+#chat-window {
+    /* background-color: rgb(23, 25, 82); */
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: black;
+}
+
+#top-list-column-2 li {
+    margin-left: 100px;
+}
+
+#top-list-column-3 {
+    text-align: center;
+    margin-left: 50px;
+}

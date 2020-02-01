@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+
+    <style>
+        canvas {
+            background-color: #2a3439;
+            border: 1px solid black;
+            transition: 1s;
+        }
+        /* canvas:hover {
+            transform: scale(2);
+        } */
+    </style>
+
+    <body>
+        <canvas id="grid"></canvas>
+            <script>
+
+
+                /* this code from:
+                https://codereview.stackexchange.com/questions/114702/drawing-a-grid-on-canvas */
+
+                    var drawGrid = function(w, h, id) {
+                        var canvas = document.getElementById(id);
+                        var ctx = canvas.getContext('2d');
+                        ctx.canvas.width  = w;
+                        ctx.canvas.height = h;
+                        
+                        var data = '<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"> \
+                            <defs> \
+                                <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse"> \
+                                    <path d="M 8 0 L 0 0 0 8" fill="none" stroke="black" stroke-width="0.5" /> \
+                                </pattern> \
+                                <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"> \
+                                    <rect width="80" height="80" fill="url(#smallGrid)" /> \
+                                    <path d="M 80 0 L 0 0 0 80" fill="none" stroke="blackuse" stroke-width="1" /> \
+                                </pattern> \
+                            </defs> \
+                            <rect width="100%" height="100%" fill="url(#smallGrid)" /> \
+                        </svg>';
+                    
+                        var DOMURL = window.URL || window.webkitURL || window;
+                        
+                        var img = new Image();
+                        var svg = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+                        var url = DOMURL.createObjectURL(svg);
+                        
+                        img.onload = function () {
+                          ctx.drawImage(img, 0, 0);
+                          DOMURL.revokeObjectURL(url);
+                        }
+                        img.src = url;
+
+                        var points = [],
+        currentPoint = 1,
+        speed = 2,
+        targetX = 0,
+        targetY = 0,
+        x = 0,
+        y = 0;
+    
+    // make some points
+    for (var i = 0; i < 50; i++) {
+        points.push({
+            x: i * (canvas.width/30), // adjust width of line
+            y: 400 - i**2
+            // <!-- y: i * (canvas.width/30), -->
+        });
+    }
+    
+    // set the initial target and starting point
+    targetX = points[1].x;
+    targetY = points[1].y;
+    x = points[0].x;
+    y = points[0].y;
+    
+    function draw() {
+        var tx = targetX - x,
+            ty = targetY - y,
+            dist = Math.sqrt(tx*tx+ty*ty),
+            velX = (tx/dist)*speed,
+            velY = (ty/dist)*speed;
+    
+            x += velX
+            y += velY;
+
+
+        if(dist < 1){
+            currentPoint++;
+    
+            if(currentPoint >= points.length){
+                currentPoint = 1;
+                x = points[0].x;
+                y = points[0].y;
+            }
+    
+            targetX = points[currentPoint].x;
+            targetY = points[currentPoint].y;
+
+        }
+
+        // <!-- ctx.clearRect(0,0,canvas.width, canvas.height); -->
+        ctx.beginPath();
+        ctx.moveTo(points[0].x, points[0].y);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'white';
+        ctx.fillStyle = 'white';
+    
+        for (var p = 0, plen = currentPoint-1; p < plen; p++) {
+            ctx.lineTo(points[p].x, points[p].y);
+        }
+        ctx.lineTo(x, y);    
+        ctx.stroke();
+
+        if (y > 0) { 
+            requestAnimationFrame(draw);
+        }
+    }
+    
+    draw();
+
+
+                    }
+                    drawGrid(800, 800, "grid");
+                    
+             </script>
+
+    </body>
+</html><!-- Created by Ginfio-->
